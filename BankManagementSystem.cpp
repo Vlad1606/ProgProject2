@@ -1,4 +1,3 @@
-#include "pch.h"
 #include <iostream>
 #include "Header.h"
 #include <fstream>
@@ -45,7 +44,7 @@ bool is_account_number_taken(int acno) {
 
 void account::create_account() {
     do {
-        std::cout << "\nEnter the account No. :";
+        std::cout << "\nEnter the account No. : ";
         std::cin >> acno;
         if (is_account_number_taken(acno)) {
             std::cout << "Account number already taken. Please choose another number.\n";
@@ -57,7 +56,7 @@ void account::create_account() {
     std::cin.getline(name, 50);
 
     while (true) {
-        std::cout << "\nEnter Type of Account (Checking/Saving) as C or S :";
+        std::cout << "\nEnter Type of Account (Checking/Saving) as C or S : ";
         std::cin >> type;
         type = toupper(type);
         if (type == 'C' || type == 'S') {
@@ -65,7 +64,7 @@ void account::create_account() {
         }
     }
 
-    std::cout << "\nEnter Initial amount:";
+    std::cout << "\nEnter Initial amount: ";
     std::cin >> deposit;
     std::cout << "\n\nAccount Created...";
 }
@@ -78,14 +77,14 @@ void account::show_account() const {
 }
 
 void account::modify() {
-    std::cout << "\nAccount No. :" << acno;
-    std::cout << "\nEnter account Holder Name :";
+    std::cout << "\nAccount No. : " << acno;
+    std::cout << "\nEnter account Holder Name : ";
     std::cin.ignore();
     std::cin.getline(name, 50);
-    std::cout << "\nModify Type of Account (C/S) :";
+    std::cout << "\nModify Type of Account (C/S) : ";
     std::cin >> type;
     type = toupper(type);
-    std::cout << "\nModify Balance amount :";
+    std::cout << "\nModify Balance amount : ";
     std::cin >> deposit;
 }
 
@@ -136,7 +135,7 @@ void display_sp(int n) {
     ifstream inFile;
     inFile.open(file, ios::binary);
     if (!inFile) {
-        std::cout << "File could not open !! Press any Key...";
+        std::cout << "File could not open !! Press any Key... ";
         return;
     }
     std::cout << "\nBALANCE DETAILS\n";
@@ -149,7 +148,7 @@ void display_sp(int n) {
     }
     inFile.close();
     if (!exist_flag)
-        std::cout << "\n\nAccount Number does not exist";
+        std::cout << "\n\nAccount Number does not exist ";
 }
 
 void modify_account(int n) {
